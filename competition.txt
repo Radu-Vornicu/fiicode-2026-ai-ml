@@ -1,0 +1,869 @@
+Skip to
+content
+Kaggle
+
+Create
+Home
+
+Competitions
+
+Datasets
+
+Models
+
+Benchmarks
+
+Game Arena
+
+Code
+
+Discussions
+
+Learn
+
+More
+
+
+View Active Events
+
+Search
+
+AncaCiurte · Community Prediction Competition · Private · 6 days to go
+FiiCode 2026 - AI competition
+Predict the Success of a Bank Telemarketing Campaign
+
+
+FiiCode 2026 - AI competition
+
+Submit Prediction
+Overview
+In this competition, participants are challenged to build a binary classification model that predicts whether a client of a Portuguese banking institution will subscribe to a term deposit following a direct marketing campaign.
+
+The dataset is based on real-world data from phone-based marketing campaigns, where clients were contacted one or multiple times as part of an outreach effort. Each record captures a snapshot of a client’s demographic profile, financial status, and interaction history with previous marketing campaigns.
+
+The objective is to leverage this information to accurately identify clients who are most likely to subscribe to the offered product. A reliable prediction model can help banks improve the efficiency of their marketing campaigns by focusing efforts on high-potential customers, reducing unnecessary contact costs, and increasing overall conversion rates.
+
+Participants will train their models using the provided training dataset, which includes the ground truth labels, and generate predictions for an unlabeled test dataset. Submissions will be evaluated against a hidden ground truth using a predefined evaluation metric, and performance will be ranked on a leaderboard.
+
+This challenge focuses on solving a realistic business problem involving customer behavior prediction, class imbalance, and generalization to unseen data.
+
+Start
+
+8 days ago
+Close
+6 days to go
+Evaluation
+Evaluation
+Submissions are evaluated using the Area Under the Receiver Operating Characteristic Curve (ROC-AUC).
+
+The ROC-AUC metric measures the ability of the model to distinguish between clients who subscribe to the term deposit and those who do not.
+
+Predictions should be probabilities between 0 and 1 indicating the likelihood that a client subscribes to the term deposit.
+
+Submission File
+For each id in the test set, you must predict the probability for the target variable Subscribed. The file should contain a header and have the following format:
+
+id,Subscribed
+534,0.9
+535,0.1
+536,0.5
+etc.
+Competition Host
+AncaCiurte
+
+Prizes & Awards
+Kudos
+
+Does not award Points or Medals
+
+Participation
+67 Entrants
+
+53 Participants
+
+53 Teams
+
+544 Submissions
+
+Tags
+Roc Auc Score
+Table of Contents
+
+
+
+
+
+
+
+
+
+Skip to
+content
+Kaggle
+
+Create
+Home
+
+Competitions
+
+Datasets
+
+Models
+
+Benchmarks
+
+Game Arena
+
+Code
+
+Discussions
+
+Learn
+
+More
+
+
+View Active Events
+
+Search
+
+AncaCiurte · Community Prediction Competition · Private · 6 days to go
+
+Submit Prediction
+FiiCode 2026 - AI competition
+Predict the Success of a Bank Telemarketing Campaign
+
+
+Dataset Description
+This dataset, originally introduced in [Moro 2014], contains data from direct marketing campaigns conducted by a Portuguese banking institution. The campaigns aimed to promote a bank term deposit and were carried out primarily through phone calls.
+
+Each row in the dataset represents information about a client and their interaction history during a marketing campaign. In many cases, multiple phone contacts were made to the same client over time. The goal of these repeated interactions was to determine whether the client would ultimately subscribe to the offered term deposit.
+
+The target variable (Subscribed) indicates the final outcome of the campaign: 1 — the client subscribed to the term deposit 0 — the client did not subscribe
+
+Using the provided demographic, financial, and campaign-related features, participants are challenged to build a predictive model that accurately identifies which clients are most likely to subscribe to the term deposit. Such a model can help financial institutions optimize marketing strategies, reduce operational costs, and improve campaign effectiveness.
+
+References:
+
+[Moro 2014] Moro, S., Rita, P., & Cortez, P. (2014). Bank Marketing [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5K306.
+
+Dataset
+train.csv - the training dataset; Subscribed is the binary target
+test.csv - the test dataset; your objective is to predict the probability of Subscribed
+sample_submission.csv - a sample submission file in the correct format
+Feature description
+Input variables:
+bank client data:
+id (numeric)
+age (numeric)
+job : type of job (categorical: "admin.","unknown","unemployed","management","housemaid","entrepreneur","student", "blue-collar","self-employed","retired","technician","services")
+marital : marital status (categorical: "married","divorced","single"; note: "divorced" means divorced or widowed)
+education (categorical: "unknown","secondary","primary","tertiary")
+default: has credit in default? (binary: "yes","no")
+balance: average yearly balance, in euros (numeric)
+housing: has housing loan? (binary: "yes","no")
+loan: has personal loan? (binary: "yes","no")
+related with the last contact of the current campaign:
+contact: contact communication type (categorical: "unknown","telephone","cellular")
+day: last contact day of the month (numeric)
+month: last contact month of year (categorical: "jan", "feb", "mar", …, "nov", "dec")
+duration: last contact duration, in seconds (numeric)
+other attributes:
+campaign: number of contacts performed during this campaign and for this client (numeric, includes last contact)
+pdays: number of days that passed by after the client was last contacted from a previous campaign (numeric, -1 means client was not previously contacted)
+previous: number of contacts performed before this campaign and for this client (numeric)
+poutcome: outcome of the previous marketing campaign (categorical: "unknown","other","failure","success")
+Output variable (desired target):
+Subscribed: has the client subscribed a term deposit? (numeric: 1 - means 'yes', 0 - means 'no')
+Files
+2 files
+
+Size
+940.69 kB
+
+Type
+csv
+
+License
+CC BY-SA 4.0
+
+test.csv(82.94 kB)
+
+10 of 17 columns
+
+
+id
+
+age
+
+job
+
+marital
+
+education
+
+default
+
+balance
+
+housing
+
+loan
+
+contact
+Label	Count
+1.00 - 100.90	100
+100.90 - 200.80	100
+200.80 - 300.70	100
+300.70 - 400.60	100
+400.60 - 500.50	100
+500.50 - 600.40	100
+600.40 - 700.30	100
+700.30 - 800.20	100
+800.20 - 900.10	100
+900.10 - 1000.00	100
+1
+1000
+Label	Count
+18.00 - 25.00	34
+25.00 - 32.00	201
+32.00 - 39.00	262
+39.00 - 46.00	190
+46.00 - 53.00	128
+53.00 - 60.00	111
+60.00 - 67.00	39
+67.00 - 74.00	19
+74.00 - 81.00	13
+81.00 - 88.00	3
+18
+88
+management
+23%
+blue-collar
+19%
+Other (588)
+59%
+married
+57%
+single
+31%
+Other (120)
+12%
+secondary
+51%
+tertiary
+32%
+Other (172)
+17%
+false
+Boolean	Count
+true	15
+false	985
+[null]	0
+true
+
+152%
+
+false
+
+98599%
+
+Label	Count
+-1042.00 - 9274.90	971
+9274.90 - 19591.80	25
+19591.80 - 29908.70	2
+29908.70 - 40225.60	1
+91810.10 - 102127.00	1
+-1042
+102k
+true
+false
+Boolean	Count
+true	468
+false	532
+[null]	0
+true
+
+46847%
+
+false
+
+53253%
+
+false
+Boolean	Count
+true	130
+false	870
+[null]	0
+true
+
+13013%
+
+false
+
+87087%
+
+cellular
+73%
+unknown
+21%
+Other (59)
+6%
+1
+28
+blue-collar
+married
+secondary
+no
+-42
+yes
+no
+cellular
+2
+28
+self-employed
+single
+secondary
+no
+-395
+yes
+no
+unknown
+3
+30
+blue-collar
+married
+primary
+no
+184
+yes
+no
+unknown
+4
+31
+technician
+divorced
+secondary
+no
+24
+no
+yes
+cellular
+5
+30
+management
+single
+tertiary
+no
+4889
+no
+no
+cellular
+6
+43
+blue-collar
+married
+primary
+no
+289
+yes
+no
+cellular
+7
+26
+blue-collar
+single
+secondary
+no
+0
+yes
+no
+cellular
+8
+52
+admin.
+married
+secondary
+no
+484
+yes
+no
+unknown
+9
+37
+admin.
+married
+tertiary
+no
+3913
+yes
+no
+cellular
+10
+44
+entrepreneur
+married
+tertiary
+no
+121
+no
+no
+cellular
+11
+34
+admin.
+married
+tertiary
+no
+37
+no
+no
+cellular
+12
+35
+admin.
+divorced
+secondary
+no
+1085
+no
+no
+cellular
+13
+42
+management
+divorced
+tertiary
+no
+0
+no
+no
+unknown
+14
+39
+technician
+married
+secondary
+no
+768
+yes
+yes
+unknown
+15
+57
+admin.
+divorced
+secondary
+no
+6157
+no
+yes
+cellular
+16
+35
+technician
+married
+tertiary
+no
+0
+yes
+yes
+cellular
+17
+60
+blue-collar
+married
+primary
+no
+631
+no
+no
+cellular
+18
+27
+student
+single
+secondary
+no
+585
+no
+no
+cellular
+19
+35
+management
+married
+tertiary
+no
+244
+yes
+no
+cellular
+20
+72
+retired
+married
+secondary
+no
+1129
+no
+no
+cellular
+21
+32
+unemployed
+single
+tertiary
+no
+1611
+yes
+no
+cellular
+22
+28
+technician
+single
+secondary
+no
+5763
+no
+yes
+cellular
+23
+32
+management
+single
+tertiary
+no
+2536
+yes
+no
+cellular
+24
+45
+self-employed
+married
+secondary
+no
+2278
+no
+no
+unknown
+25
+41
+entrepreneur
+married
+secondary
+no
+707
+no
+no
+unknown
+26
+34
+technician
+married
+secondary
+no
+1035
+no
+no
+cellular
+27
+35
+technician
+single
+secondary
+no
+16
+yes
+no
+cellular
+28
+56
+blue-collar
+married
+primary
+no
+284
+no
+yes
+telephone
+29
+45
+technician
+married
+primary
+no
+-158
+yes
+no
+cellular
+30
+40
+technician
+divorced
+secondary
+no
+0
+no
+no
+cellular
+31
+32
+blue-collar
+married
+secondary
+no
+783
+yes
+no
+unknown
+32
+38
+management
+married
+tertiary
+no
+3436
+no
+no
+cellular
+33
+34
+management
+single
+primary
+no
+212
+no
+no
+unknown
+34
+52
+services
+married
+secondary
+no
+657
+no
+no
+telephone
+35
+72
+retired
+married
+primary
+no
+2600
+no
+no
+cellular
+36
+35
+management
+single
+tertiary
+no
+62
+yes
+no
+cellular
+37
+44
+admin.
+married
+secondary
+no
+32
+no
+yes
+unknown
+38
+33
+technician
+single
+secondary
+no
+5235
+no
+no
+cellular
+39
+42
+admin.
+divorced
+secondary
+no
+256
+no
+no
+cellular
+40
+32
+technician
+single
+secondary
+no
+1732
+yes
+no
+cellular
+41
+28
+technician
+single
+secondary
+no
+909
+no
+yes
+cellular
+42
+29
+services
+single
+tertiary
+no
+1788
+no
+no
+cellular
+43
+31
+management
+divorced
+tertiary
+no
+254
+no
+no
+cellular
+44
+46
+entrepreneur
+married
+primary
+no
+5130
+yes
+yes
+cellular
+45
+43
+management
+married
+secondary
+no
+107
+yes
+yes
+telephone
+46
+28
+admin.
+married
+secondary
+no
+1595
+no
+no
+cellular
+47
+29
+management
+married
+tertiary
+no
+30
+no
+no
+cellular
+48
+60
+blue-collar
+married
+primary
+no
+93
+no
+yes
+unknown
+49
+51
+management
+single
+tertiary
+no
+151
+yes
+no
+cellular
+50
+44
+blue-collar
+married
+primary
+no
+-295
+yes
+no
+unknown
+Data Explorer
+940.69 kB
+
+test.csv
+
+train.csv
+
+Summary
+2 files
+
+35 columns
+
+
+Download All
+kaggle competitions download -c fiicode-2026-ai-competition
+Download using Kaggle CLI
+
+kagglehub.competition_download('fiicode-2026-ai-competition')
+Download using kagglehub
+
+Metadata
+License
+CC BY-SA 4.0
+
+
+
+
+
+
+
+Generate python notebook solution for this competition.
+
+this is how u retrieve the files;
+
+
+# This Python 3 environment comes with many helpful analytics libraries installed
+# It is defined by the kaggle/python Docker image: https://github.com/kaggle/docker-python
+# For example, here's several helpful packages to load
+
+import numpy as np # linear algebra
+import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
+
+# Input data files are available in the read-only "../input/" directory
+# For example, running this (by clicking run or pressing Shift+Enter) will list all files under the input directory
+
+import os
+for dirname, _, filenames in os.walk('/kaggle/input'):
+    for filename in filenames:
+        print(os.path.join(dirname, filename))
+
+# You can write up to 20GB to the current directory (/kaggle/working/) that gets preserved as output when you create a version using "Save & Run All" 
+# You can also write temporary files to /kaggle/temp/, but they won't be saved outside of the current session
+
+
+
+
+
+also, the solution should be a submission.csv file under the specified format

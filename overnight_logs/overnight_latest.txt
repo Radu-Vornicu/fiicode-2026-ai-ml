@@ -1,0 +1,4 @@
+pid=8336
+stdout=C:\Users\elev_a8qwr4s\Documents\radu.vornicu\fiicode-ai-and-ml-2026\overnight_logs\overnight_20260327_193321.out.log
+stderr=C:\Users\elev_a8qwr4s\Documents\radu.vornicu\fiicode-ai-and-ml-2026\overnight_logs\overnight_20260327_193321.err.log
+started=20260327_193321
