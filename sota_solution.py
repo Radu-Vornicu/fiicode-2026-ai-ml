@@ -74,6 +74,8 @@ CATBOOST_BERNOULLI = {
     "bootstrap_type": "Bernoulli",
     "subsample": 0.8,
 }
+CATBOOST_BERNOULLI.pop("bagging_temperature", None)
+CATBOOST_BERNOULLI.pop("bagging_temperature", None)
 
 # LightGBM configurations
 LGBM_BASE = {

@@ -57,6 +57,8 @@ CB_BERN_PARAMS = {
     "bootstrap_type": "Bernoulli",
     "subsample": 0.8,
 }
+CB_BERN_PARAMS.pop("bagging_temperature", None)
+CB_BERN_PARAMS.pop("bagging_temperature", None)
 
 # Optimized LightGBM params
 LGBM_PARAMS = {
