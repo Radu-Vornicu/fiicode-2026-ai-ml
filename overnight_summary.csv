@@ -1,0 +1,4 @@
+name,local_auc
+overnight_pseudo5_best,0.9376434065934067
+overnight_nn_teacher,0.9312571428571428
+overnight_diverse_blend,0.9376887912087912
