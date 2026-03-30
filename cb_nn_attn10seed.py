@@ -18,6 +18,7 @@ from leaderboard_push import (
     rank_norm,
     fit_seed_ensemble,
 )
+from submission_layout import resolve_submission_path
 
 
 ID_COL = "id"
@@ -354,7 +355,7 @@ def main():
     print(f"80/20 CatBoost/NN AUC: {blend_auc:.6f}")
     build_submission(test[ID_COL], blend_test, "submission_cb80_nn20_base.csv")
 
-    current_submission_path = Path("submission.csv")
+    current_submission_path = resolve_submission_path("submission.csv")
     if current_submission_path.exists():
         current_submission = pd.read_csv(current_submission_path)
         current_blend = CATBOOST_WEIGHT * rank_norm(

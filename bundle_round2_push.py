@@ -17,6 +17,7 @@ from bundle_inspired_push import (
     output_path,
     rank_norm,
 )
+from submission_layout import resolve_submission_path
 
 
 BASE_VIEW_WEIGHTS = {
@@ -239,7 +240,7 @@ def load_base_predictions() -> tuple[dict[str, np.ndarray], dict[str, np.ndarray
     oof_frame = pd.read_csv("oof_bundle_inspired.csv")
     oof_map = {name: oof_frame[name].to_numpy() for name in BASE_VIEW_WEIGHTS}
     test_map = {
-        name: pd.read_csv(f"submission_{name}.csv")[TARGET].to_numpy()
+        name: pd.read_csv(resolve_submission_path(f"submission_{name}.csv"))[TARGET].to_numpy()
         for name in BASE_VIEW_WEIGHTS
     }
     return oof_map, test_map
@@ -368,7 +369,7 @@ def main() -> None:
     print(f"Best meta blend AUC: {meta_auc:.6f}")
     build_submission(test[ID_COL], meta_best_test, "submission_round2_meta_best.csv")
 
-    nn_path = Path("submission_nn_attn10seed.csv")
+    nn_path = resolve_submission_path("submission_nn_attn10seed.csv")
     if nn_path.exists():
         nn_pred = pd.read_csv(nn_path)[TARGET].to_numpy()
         meta_nn = 0.80 * rank_norm(meta_best_test) + 0.20 * rank_norm(nn_pred)

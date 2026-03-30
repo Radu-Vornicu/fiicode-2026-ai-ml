@@ -21,6 +21,7 @@ from bundle_round2_push import (
 )
 from bundle_inspired_push import BASE_PARAMS, BERN_PARAMS, ID_COL, TARGET, locate_file, rank_norm
 from cb_nn_attn10seed import make_nn_features, encode_columns, TabularAttentionNet
+from submission_layout import resolve_submission_path
 
 
 CATBOOST_OVERNIGHT_SEEDS = [42, 71, 314, 2026, 3407]
@@ -55,7 +56,7 @@ def load_teacher_predictions(test_ids: pd.Series) -> tuple[np.ndarray, np.ndarra
     ]
     vectors = []
     for filename in candidates:
-        path = Path(filename)
+        path = resolve_submission_path(filename)
         if not path.exists():
             continue
         frame = pd.read_csv(path)

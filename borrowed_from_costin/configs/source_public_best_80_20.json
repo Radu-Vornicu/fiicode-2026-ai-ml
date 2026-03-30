@@ -1,0 +1,8 @@
+{
+  "weights": {
+    "exp012_blend_bucket_features_fixed": 0.8,
+    "exp026_gpu_nn_blend": 0.2
+  },
+  "blend_type": "rank_blend",
+  "notes": "Source repo public-best 80/20 blend that reached the strongest recorded public leaderboard result in the source journal."
+}

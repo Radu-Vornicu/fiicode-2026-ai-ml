@@ -1,0 +1,22 @@
+name: exp021_blend_bucket_seedbag5_fixed
+competition_slug: fiicode-2026-ai-competition
+model_family: catboost
+feature_set: blend_buckets
+drop_columns: []
+data_dir: data/raw
+output_root: outputs
+n_trials: 0
+search_folds: 5
+search_seeds: [42]
+final_folds: 5
+final_seeds: [42, 2024, 3407, 777, 1337]
+early_stop: 250
+study_name: exp021_blend_bucket_seedbag5_fixed
+storage: null
+timeout: null
+thread_count: 8
+with_class_weight: true
+fixed_params_path: outputs/models/exp012_blend_bucket_features_fixed/best_params.json
+train_weight_mode: null
+train_weight_params: {}
+notes: Fixed-param exp012 rerun with a wider five-seed CatBoost bag on the public-best bucket feature path.

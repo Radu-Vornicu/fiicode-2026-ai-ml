@@ -16,6 +16,7 @@ from sklearn.linear_model import RidgeClassifier
 from sklearn.metrics import roc_auc_score
 from sklearn.model_selection import StratifiedKFold
 from sklearn.preprocessing import StandardScaler
+from submission_layout import submission_output_path
 from xgboost import XGBClassifier
 
 warnings.filterwarnings("ignore")
@@ -146,8 +147,8 @@ def locate_file(filename: str) -> Path:
 def output_path(filename: str) -> Path:
     kaggle_working = Path("/kaggle/working")
     if kaggle_working.exists():
-        return kaggle_working / filename
-    return Path.cwd() / filename
+        return submission_output_path(filename, kaggle_working)
+    return submission_output_path(filename, Path.cwd())
 
 
 def rank_norm(values: np.ndarray) -> np.ndarray:

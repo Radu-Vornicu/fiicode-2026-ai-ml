@@ -1,0 +1,16 @@
+{
+  "weights": {
+    "exp026_attention_gpu": 0.5657476258648011,
+    "exp026_fttransformer_lite_gpu": 0.43425237413519885
+  },
+  "members": [
+    "exp026_attention_gpu",
+    "exp026_fttransformer_lite_gpu"
+  ],
+  "samples": 12000,
+  "seed": 42,
+  "best_single_model": "exp026_attention_gpu",
+  "best_single_auc": 0.933358945054945,
+  "improvement_over_best_single": 0.0012857582417583613,
+  "promoted": true
+}

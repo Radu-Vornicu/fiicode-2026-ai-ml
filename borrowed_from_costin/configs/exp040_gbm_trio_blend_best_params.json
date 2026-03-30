@@ -1,0 +1,10 @@
+{
+  "weights": {
+    "exp012_blend_bucket_features_fixed": 0.6828866480794203,
+    "exp034_lightgbm_target_enc": 0.2975545448263244,
+    "exp035_xgboost_target_enc": 0.004592966328273583,
+    "exp033_target_encoding": 0.014965840765981755
+  },
+  "samples": 5000,
+  "seed": 42
+}

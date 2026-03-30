@@ -5,6 +5,7 @@ import pandas as pd
 from catboost import CatBoostClassifier
 from sklearn.metrics import roc_auc_score
 from sklearn.model_selection import StratifiedKFold
+from submission_layout import resolve_submission_path, submission_output_path
 
 
 TARGET = "Subscribed"
@@ -87,8 +88,8 @@ def locate_file(filename: str) -> Path:
 def output_path(filename: str) -> Path:
     kaggle_working = Path("/kaggle/working")
     if kaggle_working.exists():
-        return kaggle_working / filename
-    return Path.cwd() / filename
+        return submission_output_path(filename, kaggle_working)
+    return submission_output_path(filename, Path.cwd())
 
 
 def rank_norm(values: np.ndarray) -> np.ndarray:
@@ -447,7 +448,7 @@ def main() -> None:
     build_submission(test[ID_COL], best_test, "submission_bundle_state3way_best.csv")
     build_submission(test[ID_COL], best_test, "submission.csv")
 
-    nn_path = Path("submission_nn_attn10seed.csv")
+    nn_path = resolve_submission_path("submission_nn_attn10seed.csv")
     if nn_path.exists():
         nn_submission = pd.read_csv(nn_path)
         if list(nn_submission.columns) == [ID_COL, TARGET] and len(nn_submission) == len(test):

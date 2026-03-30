@@ -1,0 +1,24 @@
+name: exp019_blend_bucket_state_crosses_fixed
+competition_slug: fiicode-2026-ai-competition
+model_family: catboost
+feature_set: blend_buckets_state_crosses
+drop_columns:
+  - campaign_bucket
+  - previous_bucket
+  - duration_bucket
+  - day_bucket
+data_dir: data/raw
+output_root: outputs
+n_trials: 0
+search_folds: 5
+search_seeds: [42]
+final_folds: 5
+final_seeds: [42, 2024, 3407]
+early_stop: 250
+study_name: exp019_blend_bucket_state_crosses_fixed
+storage: null
+timeout: null
+thread_count: 8
+with_class_weight: true
+fixed_params_path: outputs/models/exp015_blend_bucket_pruned_fixed/best_params.json
+notes: Full fixed evaluation for extra low-cardinality state crosses on the current best pruned CatBoost path.

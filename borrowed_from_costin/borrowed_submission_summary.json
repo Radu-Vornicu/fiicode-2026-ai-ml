@@ -1,0 +1,38 @@
+{
+  "generated_at_repo": "C:\\Users\\dbxdr_iytiz92\\radu.vornicu\\fiicode-2026-ai-ml",
+  "source_repo": "C:\\Users\\dbxdr_iytiz92\\Dropbox\\fiicode",
+  "candidates": [
+    {
+      "name": "top3_borrowed_exact_source",
+      "path": "C:\\Users\\dbxdr_iytiz92\\radu.vornicu\\fiicode-2026-ai-ml\\submission_top3_borrowed_exact_source\\submission.csv",
+      "local_oof_auc": 0.9368941318681319,
+      "type": "exact_source_copy",
+      "source_submission": "C:\\Users\\dbxdr_iytiz92\\Dropbox\\fiicode\\outputs\\submissions\\exp_blend_80_20\\submission.csv",
+      "oof_components": [
+        "exp012_blend_bucket_features_fixed",
+        "exp026_gpu_nn_blend"
+      ],
+      "weights": {
+        "exp012_blend_bucket_features_fixed": 0.8,
+        "exp026_gpu_nn_blend": 0.2
+      },
+      "notes": "Exact copy of the source repo public-best 80/20 blend submission, scored locally via the underlying OOF blend."
+    },
+    {
+      "name": "top3_borrowed_hybrid_rank3",
+      "path": "C:\\Users\\dbxdr_iytiz92\\radu.vornicu\\fiicode-2026-ai-ml\\submission_top3_borrowed_hybrid_rank3\\submission.csv",
+      "local_oof_auc": 0.9379886593406593,
+      "type": "rank_blend",
+      "components": {
+        "submission_overnight_pseudo5_best.csv": 0.5,
+        "C:\\Users\\dbxdr_iytiz92\\Dropbox\\fiicode\\outputs\\submissions\\exp026_gpu_nn_blend\\submission.csv": 0.2,
+        "submission_bundle_state3way_best.csv": 0.3
+      },
+      "notes": "OOF-optimized 3-way rank blend that adds the source neural branch to Radu's two strongest local ensemble assets."
+    }
+  ],
+  "recommended_submission": "C:\\Users\\dbxdr_iytiz92\\radu.vornicu\\fiicode-2026-ai-ml\\submission_top3_borrowed_exact_source\\submission.csv",
+  "recommended_reason": "This is the exact copy of the source repo public-best branch and is the safest top-3 candidate.",
+  "challenger_submission": "C:\\Users\\dbxdr_iytiz92\\radu.vornicu\\fiicode-2026-ai-ml\\submission_top3_borrowed_hybrid_rank3\\submission.csv",
+  "challenger_reason": "This hybrid improves the target repo's best available local OOF blend by injecting the source neural branch for extra diversity."
+}

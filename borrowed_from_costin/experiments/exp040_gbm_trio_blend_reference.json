@@ -1,0 +1,16 @@
+{
+  "members": [
+    "exp012_blend_bucket_features_fixed",
+    "exp034_lightgbm_target_enc",
+    "exp035_xgboost_target_enc",
+    "exp033_target_encoding"
+  ],
+  "weights": {
+    "exp012_blend_bucket_features_fixed": 0.6828866480794203,
+    "exp034_lightgbm_target_enc": 0.2975545448263244,
+    "exp035_xgboost_target_enc": 0.004592966328273583,
+    "exp033_target_encoding": 0.014965840765981755
+  },
+  "local_oof_auc": 0.9368625494505495,
+  "notes": "Reference blend exported from the source repo for provenance."
+}

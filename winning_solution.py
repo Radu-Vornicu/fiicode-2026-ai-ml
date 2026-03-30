@@ -22,6 +22,7 @@ import pandas as pd
 from sklearn.metrics import roc_auc_score
 from sklearn.model_selection import StratifiedKFold
 from sklearn.preprocessing import StandardScaler
+from submission_layout import submission_output_path
 
 # ============================================================================
 # CONFIGURATION (from exp012 + exp026)
@@ -632,10 +633,11 @@ def main():
         ID_COL: test[ID_COL],
         TARGET: np.clip(final_test, 1e-6, 1 - 1e-6)
     })
-    submission.to_csv('submission.csv', index=False)
+    submission_path = submission_output_path("submission.csv")
+    submission.to_csv(submission_path, index=False)
     
     print(f'\nFinal OOF AUC: {blend_auc:.6f}')
-    print('Saved: submission.csv')
+    print(f'Saved: {submission_path}')
     print(submission.head(10))
     
     # Also save individual model submissions
@@ -644,8 +646,9 @@ def main():
             ID_COL: test[ID_COL],
             TARGET: np.clip(rank_normalize(preds), 1e-6, 1 - 1e-6)
         })
-        sub.to_csv(f'submission_{name}.csv', index=False)
-        print(f'Saved: submission_{name}.csv')
+        sub_path = submission_output_path(f"submission_{name}.csv")
+        sub.to_csv(sub_path, index=False)
+        print(f'Saved: {sub_path}')
 
 
 if __name__ == '__main__':
