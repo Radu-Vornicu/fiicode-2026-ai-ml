@@ -442,7 +442,7 @@ def main() -> None:
             "bundle_state3way_equal": equal_oof,
             "bundle_state3way_best": best_oof,
         },
-        "oof_bundle_inspired.csv",
+        "oof_bundle_catboost.csv",
     )
 
     build_submission(test[ID_COL], best_test, "submission_bundle_state3way_best.csv")

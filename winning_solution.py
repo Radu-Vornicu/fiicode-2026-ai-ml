@@ -1,7 +1,7 @@
 """
 Winning Solution Implementation - FiiCode 2026 AI Competition
 ==============================================================
-Based on Costin's proven 0.94839 LB approach:
+Based on the top proven 0.94839 LB approach:
 - CatBoost with blend_buckets features (exp012 style)
 - Attention-based Neural Network (exp026 style)  
 - 80/20 rank-based blend
@@ -109,7 +109,7 @@ def _string_col(data, column, lowercase=False):
 
 def build_blend_bucket_features(data):
     """
-    Implements the blend_buckets feature set from Costin's winning solution.
+    Implements the blend_buckets feature set from the top winning solution.
     This feature engineering approach achieved the best CV and LB scores.
     """
     df = data.copy()

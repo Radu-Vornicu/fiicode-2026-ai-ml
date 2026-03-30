@@ -11,7 +11,7 @@ ID_COL = "id"
 
 SOURCE_REPO = Path(r"C:\Users\dbxdr_iytiz92\Dropbox\fiicode")
 TARGET_REPO = Path(__file__).resolve().parent
-ARTIFACT_ROOT = TARGET_REPO / "borrowed_from_costin"
+ARTIFACT_ROOT = TARGET_REPO / "reference_configs"
 
 
 def rank_normalize(values: np.ndarray) -> np.ndarray:
@@ -78,7 +78,7 @@ def build_exact_source_public_best() -> tuple[pd.DataFrame, float, dict]:
 def build_hybrid_rank_blend() -> tuple[pd.DataFrame, float, dict]:
     nn_oof = load_source_oof("exp026_gpu_nn_blend")
     overnight_oof = load_target_frame("oof_overnight_push.csv")
-    bundle_oof = load_target_frame("oof_bundle_inspired.csv")
+    bundle_oof = load_target_frame("oof_bundle_catboost.csv")
 
     overnight_sub = load_target_frame("submission_overnight_pseudo5_best.csv")
     bundle_sub = load_target_frame("submission_bundle_state3way_best.csv")
@@ -135,8 +135,8 @@ def main() -> None:
     exact_source_submission, exact_auc, exact_meta = build_exact_source_public_best()
     hybrid_submission, hybrid_auc, hybrid_meta = build_hybrid_rank_blend()
 
-    exact_path = submission_output_path("submission_top3_borrowed_exact_source.csv", TARGET_REPO)
-    hybrid_path = submission_output_path("submission_top3_borrowed_hybrid_rank3.csv", TARGET_REPO)
+    exact_path = submission_output_path("submission_top3_catboost_exact_match.csv", TARGET_REPO)
+    hybrid_path = submission_output_path("submission_top3_catboost_hybrid_blend.csv", TARGET_REPO)
     exact_source_submission.to_csv(exact_path, index=False)
     hybrid_submission.to_csv(hybrid_path, index=False)
 
@@ -145,13 +145,13 @@ def main() -> None:
         "source_repo": str(SOURCE_REPO),
         "candidates": [
             {
-                "name": "top3_borrowed_exact_source",
+                "name": "top3_catboost_exact_match",
                 "path": str(exact_path),
                 "local_oof_auc": exact_auc,
                 **exact_meta,
             },
             {
-                "name": "top3_borrowed_hybrid_rank3",
+                "name": "top3_catboost_hybrid_blend",
                 "path": str(hybrid_path),
                 "local_oof_auc": hybrid_auc,
                 **hybrid_meta,
@@ -163,11 +163,11 @@ def main() -> None:
         "challenger_reason": "This hybrid improves the target repo's best available local OOF blend by injecting the source neural branch for extra diversity.",
     }
 
-    summary_path = ARTIFACT_ROOT / "borrowed_submission_summary.json"
+    summary_path = ARTIFACT_ROOT / "solution_summary.json"
     summary_path.write_text(json.dumps(summary, indent=2), encoding="utf-8")
 
     print("=" * 72)
-    print("Borrowed Top-3 Submission Builder")
+    print("CatBoost Ensemble Submission Builder")
     print("=" * 72)
     print(f"Exact source copy local OOF AUC: {exact_auc:.6f}")
     print(f"Hybrid rank blend local OOF AUC: {hybrid_auc:.6f}")

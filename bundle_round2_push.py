@@ -6,7 +6,7 @@ from catboost import CatBoostClassifier
 from sklearn.metrics import roc_auc_score
 from sklearn.model_selection import StratifiedKFold
 
-from bundle_inspired_push import (
+from catboost_training_utils import (
     BASE_PARAMS,
     BERN_PARAMS,
     ID_COL,
@@ -237,7 +237,7 @@ def apply_rank_blend(
 
 
 def load_base_predictions() -> tuple[dict[str, np.ndarray], dict[str, np.ndarray]]:
-    oof_frame = pd.read_csv("oof_bundle_inspired.csv")
+    oof_frame = pd.read_csv("oof_bundle_catboost.csv")
     oof_map = {name: oof_frame[name].to_numpy() for name in BASE_VIEW_WEIGHTS}
     test_map = {
         name: pd.read_csv(resolve_submission_path(f"submission_{name}.csv"))[TARGET].to_numpy()

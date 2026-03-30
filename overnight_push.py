@@ -19,7 +19,7 @@ from bundle_round2_push import (
     prepare_state_pair,
     search_blend,
 )
-from bundle_inspired_push import BASE_PARAMS, BERN_PARAMS, ID_COL, TARGET, locate_file, rank_norm
+from catboost_training_utils import BASE_PARAMS, BERN_PARAMS, ID_COL, TARGET, locate_file, rank_norm
 from cb_nn_attn10seed import make_nn_features, encode_columns, TabularAttentionNet
 from submission_layout import resolve_submission_path
 
